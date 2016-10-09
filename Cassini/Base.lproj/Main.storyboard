@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HaN-fG-cwa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="cVg-EQ-jbu">
+            <objects>
+                <splitViewController id="HaN-fG-cwa" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="3m6-pt-8lE" kind="relationship" relationship="detailViewController" id="Fzi-CX-Xi2"/>
+                        <segue destination="Cao-pK-wxf" kind="relationship" relationship="masterViewController" id="gvr-eO-Xff"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwP-n7-edK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1326" y="459"/>
+        </scene>
+        <!--Cassini-->
+        <scene sceneID="rV3-IM-bRq">
+            <objects>
+                <viewController id="M3j-Oj-XQb" customClass="CassiniViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gHM-qG-mLc"/>
+                        <viewControllerLayoutGuide type="bottom" id="MKh-DI-sFI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="awY-ph-dx9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-Br-ji0">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hym-Gr-2Yn">
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Earth"/>
+                                        <connections>
+                                            <action selector="showDetails:" destination="M3j-Oj-XQb" eventType="touchUpInside" id="zyx-JA-Qkl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ci1-b3-gsu">
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Cassini"/>
+                                        <connections>
+                                            <action selector="showDetails:" destination="M3j-Oj-XQb" eventType="touchUpInside" id="BXL-Xp-R7h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epB-8J-dQg">
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Sun"/>
+                                        <connections>
+                                            <action selector="showDetails:" destination="M3j-Oj-XQb" eventType="touchUpInside" id="5cD-KG-tY8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vxG-Br-ji0" firstAttribute="centerX" secondItem="awY-ph-dx9" secondAttribute="centerX" id="Knp-y2-Z5i"/>
+                            <constraint firstItem="vxG-Br-ji0" firstAttribute="centerY" secondItem="awY-ph-dx9" secondAttribute="centerY" id="qxo-2s-zom"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cassini" id="FGJ-Rp-Mka"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Show image" id="w7V-AV-zWZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IfP-iL-Tas" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="178.56071964017991"/>
+        </scene>
         <!--Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,25 +85,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uo4-XV-qZA">
-                                <frame key="frameInset" width="600" height="600"/>
-                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo4-XV-qZA"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VhT-K0-dml">
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uo4-XV-qZA" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="5fI-zn-WLo"/>
-                            <constraint firstAttribute="trailing" secondItem="uo4-XV-qZA" secondAttribute="trailing" id="EI5-eU-VhO"/>
-                            <constraint firstItem="uo4-XV-qZA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LV6-39-cey"/>
-                            <constraint firstItem="uo4-XV-qZA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ruv-oI-0Nx"/>
+                            <constraint firstItem="uo4-XV-qZA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3pm-IM-Azy"/>
+                            <constraint firstItem="VhT-K0-dml" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OeH-fo-Rwc"/>
+                            <constraint firstItem="uo4-XV-qZA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-64" id="SWk-fd-Zlx"/>
+                            <constraint firstAttribute="trailing" secondItem="uo4-XV-qZA" secondAttribute="trailing" constant="-177" id="SgY-Ye-d5B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uo4-XV-qZA" secondAttribute="bottom" constant="67" id="TIb-F0-ucO"/>
+                            <constraint firstItem="VhT-K0-dml" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pjm-NF-eu6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gkb-iI-YSd"/>
                     <connections>
                         <outlet property="scrollView" destination="uo4-XV-qZA" id="off-sp-Dy0"/>
+                        <outlet property="spinner" destination="VhT-K0-dml" id="RE8-f4-Ft7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378" y="196"/>
+            <point key="canvasLocation" x="2215.1999999999998" y="1208.5457271364319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LG6-1x-6uq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cao-pK-wxf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YV4-cr-Qdg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M3j-Oj-XQb" kind="relationship" relationship="rootViewController" id="PuN-lr-Bry"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B2u-Nu-8L9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384.80000000000001" y="178.56071964017991"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bRa-Vt-XfY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3m6-pt-8lE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cTc-oP-txQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qkF-1E-S7F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eco-RC-EDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="1208.5457271364319"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="w7V-AV-zWZ"/>
+    </inferredMetricsTieBreakers>
 </document>

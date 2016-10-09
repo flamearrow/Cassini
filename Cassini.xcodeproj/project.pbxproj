@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22156FD51DA9C440002F89A3 /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22156FD41DA9C440002F89A3 /* CassiniViewController.swift */; };
 		22EA51FD1DA1B51E004ABE9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA51FC1DA1B51E004ABE9D /* AppDelegate.swift */; };
 		22EA52021DA1B51E004ABE9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22EA52001DA1B51E004ABE9D /* Main.storyboard */; };
 		22EA52041DA1B51E004ABE9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EA52031DA1B51E004ABE9D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22156FD41DA9C440002F89A3 /* CassiniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 		22EA51F91DA1B51E004ABE9D /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EA51FC1DA1B51E004ABE9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22EA52011DA1B51E004ABE9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				22EA52081DA1B51E004ABE9D /* Info.plist */,
 				22EA520F1DA1BC68004ABE9D /* ImageViewController.swift */,
 				22EA52111DA1BECC004ABE9D /* DemoURL.swift */,
+				22156FD41DA9C440002F89A3 /* CassiniViewController.swift */,
 			);
 			path = Cassini;
 			sourceTree = "<group>";
@@ -102,7 +105,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Chen Cen";
 				TargetAttributes = {
 					22EA51F81DA1B51E004ABE9D = {
@@ -150,6 +153,7 @@
 				22EA52101DA1BC68004ABE9D /* ImageViewController.swift in Sources */,
 				22EA51FD1DA1B51E004ABE9D /* AppDelegate.swift in Sources */,
 				22EA52121DA1BECC004ABE9D /* DemoURL.swift in Sources */,
+				22156FD51DA9C440002F89A3 /* CassiniViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,8 +193,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -235,8 +241,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -255,6 +263,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
