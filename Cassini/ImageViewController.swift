@@ -26,8 +26,8 @@ class ImageViewController: UIViewController {
         // nil check
         if let url = imageUrl {
             // fetch and set
-            if let imageData = NSData(contentsOfURL: url) {
-                image = UIImage(data: imageData)
+            if let imageData = NSData(contentsOf: url as URL) {
+                image = UIImage(data: imageData as Data)
             }
         }
     }
